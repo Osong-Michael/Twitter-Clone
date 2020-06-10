@@ -1,14 +1,18 @@
 <div class="coulumn is-half">
+
+<% if user_signed_in? %>
   <article class="media box">
     <figure class="media-left">
       <p class="image is-64x64">
-        <img src="https://bulma.io/images/placeholders/64x64.png" alt="Placeholder image">
+        <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
       </p>
     </figure>
     <div class="media-content">
       <%= render 'tweets/form'%>
     </div>
   </article>
+
+<% end %>
 
 
   <% @tweets.each do |tweetz| %>
@@ -22,10 +26,11 @@
           </figure>
         </div>
         <div class="media-content">
-            <strong>Mike Ross</strong><br>
-            <small>@oa7</small><br>
+            <strong><%= tweetz.user.name%></strong><br>
+            <small>@<%= tweetz.user.username%></small><br>
             <p><%= tweetz.tweet %></p>
         </div>
+        <% if user_signed_in? && current_user.id == tweetz.user_id %>
         <nav class="level">
           <div class="level-left is-mobile">
             <%= link_to tweetz, class: "level-item" do %>
@@ -39,6 +44,7 @@
             <% end %>
           </div>
         </nav>
+        <%end%>
       </article>
     </div>
   <% end %>
