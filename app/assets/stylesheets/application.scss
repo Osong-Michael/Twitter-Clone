@@ -15,3 +15,15 @@
  */
 
  @import "bulma";
+
+ .image {
+   border-radius: 50%;
+   
+   img {
+     border-radius: 50%;
+   }
+ }
+
+ .notifications:not(:last-child){
+   margin-bottom: 0;
+ }
