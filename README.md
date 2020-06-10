@@ -1,24 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Twitter Clone
+This project is a clone of a the basic functionality of the Twitter software using Ruby on Rails and the Devise gem for Authentication.
+## Things you can do with this App
+- Create a User  account
+- Login and Logout of your account
+- Create, edit and delete Tweets
